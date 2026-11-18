@@ -109,7 +109,7 @@ export default function Sphere() {
     const controlsEnabled = isPointerOverSphere || isDraggingSphere;
 
     return (
-        <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-slate-950">
+        <div className="relative h-full w-full bg-slate-950">
 
             <h1 className="absolute top-8 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap text-3xl font-bold text-white">
                 3D Sphere
