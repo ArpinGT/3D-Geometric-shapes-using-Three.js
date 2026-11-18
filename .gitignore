@@ -1,0 +1,101 @@
+
+# ==========================================
+# Dependencies
+# ==========================================
+node_modules/
+.pnp/
+.pnp.js
+
+# ==========================================
+# Build output
+# ==========================================
+dist/
+dist-ssr/
+build/
+out/
+coverage/
+
+# ==========================================
+# Logs
+# ==========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==========================================
+# Environment variables
+# ==========================================
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# ==========================================
+# Local and temporary files
+# ==========================================
+*.local
+*.tmp
+*.temp
+.temp/
+.tmp/
+
+# ==========================================
+# Editor and IDE
+# ==========================================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# ==========================================
+# Operating system
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# Testing
+# ==========================================
+.nyc_output/
+playwright-report/
+test-results/
+cypress/videos/
+cypress/screenshots/
+
+# ==========================================
+# TypeScript
+# ==========================================
+*.tsbuildinfo
+
+# ==========================================
+# Vite
+# ==========================================
+vite.config.*.timestamp-*
+vite.config.*.temp-*
+
+# ==========================================
+# Package manager
+# ==========================================
+.npm/
+.yarn/*
+!.yarn/patches/
+!.yarn/plugins/
+!.yarn/releases/
+!.yarn/versions/
+.pnpm-store/
+
+# ==========================================
+# Deployment
+# ==========================================
+.vercel/
+.netlify/
