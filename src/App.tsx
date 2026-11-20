@@ -6,9 +6,11 @@ import Diamond from "@/components/Diamond";
 import Hyperboloid from "@/components/Hyperboloid";
 import Pyramid from "@/components/Pyramid";
 import Torus from "@/components/Torus";
+import Sphere from "@/components/Sphere";
 
 function App() {
   const shapes = [
+    { name: "sphere", component: <Sphere /> },
     { name: "cylinder", component: <Cylinder /> },
     { name: "torus", component: <Torus /> },
     { name: "cone", component: <Cone /> },

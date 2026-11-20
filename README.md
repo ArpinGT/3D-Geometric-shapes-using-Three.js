@@ -1,75 +1,34 @@
-# React + TypeScript + Vite
+# 3D Geometry
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive collection of 3D geometric shapes built with React, TypeScript, Three.js, and React Three Fiber. The gallery presents each shape as a wireframe that you can rotate by dragging.
 
-Currently, two official plugins are available:
+## Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Cylinder** — circular cross-sections connected by vertical lines.
+- **Torus** — a ring-shaped surface with loops around its body and tube.
+- **Cone** — horizontal circular sections tapering to an apex.
+- **Cube** — a wireframe cube showing its twelve edges.
+- **Diamond** — an octahedron-style gemstone with a central equator.
+- **Pyramid** — a square-based pyramid with subdivided triangular faces.
+- **Hyperboloid** — a one-sheet hyperboloid drawn with horizontal rings and curved meridians.
+- **Sphere** — an additional sphere component with latitude and longitude lines.
 
-## React Compiler
+The gallery is assembled in `src/App.tsx`. Each shape is a component in `src/components/`; most use `ShapeViewer` to share the canvas, title, pointer interaction, and trackball controls.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How it works
 
-## Expanding the ESLint configuration
+Shape components generate line-segment positions from the shape's geometry and store them in a Three.js `BufferGeometry`. React Three Fiber renders the geometry in a Three.js canvas. An invisible mesh receives pointer events, enabling trackball rotation when the pointer is over the shape; momentum continues after dragging ends.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Run the production build and linter with:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run build
+npm run lint
 ```
